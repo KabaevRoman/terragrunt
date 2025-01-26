@@ -200,6 +200,8 @@ const (
 
 	HelpFlagName    = "help"
 	VersionFlagName = "version"
+
+	OutputFolderFlagName = "output-folder"
 )
 
 // NewGlobalFlags creates and returns global flags.
@@ -779,5 +781,14 @@ func NewNoIncludeRootFlag(opts *options.TerragruntOptions) cli.Flag {
 		Name:        NoIncludeRootFlagName,
 		Destination: &opts.ScaffoldNoIncludeRoot,
 		Usage:       "Do not include root unit in scaffolding done by catalog.",
+	}
+}
+
+// NewOutputFolderFlag creates a flag for the --output-folder for scaffold.
+func NewOutputFolderFlag(opts *options.TerragruntOptions) *cli.GenericFlag[string] {
+	return &cli.GenericFlag[string]{
+		Name:        OutputFolderFlagName,
+		Destination: &opts.ScaffoldOutputFolder,
+		Usage:       "Output folder for scaffold output.",
 	}
 }

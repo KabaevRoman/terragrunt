@@ -27,6 +27,7 @@ func NewFlags(opts *options.TerragruntOptions) cli.Flags {
 		},
 		commands.NewNoIncludeRootFlag(opts),
 		commands.NewRootFileNameFlag(opts),
+		commands.NewOutputFolderFlag(opts),
 	}
 }
 
